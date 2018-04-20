@@ -134,6 +134,22 @@ nav li .active {
 .food-item .btn{
   width:100%;
 }
+/* End food section */
+
+/* footer section */
+#footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:40px 0px;
+    background-color: #422604;
+    color:#ffffff;
+}
+.footer-item{
+    flex: 70%;
+    max-width: 70%;
+}
+/* End food section */
 .section-title {
     font-size: 44px;
     margin-top: 0;
