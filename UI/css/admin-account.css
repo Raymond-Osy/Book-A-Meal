@@ -1,0 +1,74 @@
+#user-profile{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+#user-profile div{
+    flex: 30%;
+    max-width: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+#user-profile h3{
+    flex: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+#table-1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#table-1 div{
+    flex: 60%;
+    max-width: 60%;
+}
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #e54e02;
+    color: white;
+}
+@media (max-width: 1000px) {
+    #user-profile div{
+        flex: 50%;
+        max-width: 50%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+@media (max-width: 600px) {
+    #user-profile div{
+        flex: 70%;
+        max-width: 70%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #table-1 div{
+        flex: 90%;
+        max-width: 90%;
+    }
+}
+
