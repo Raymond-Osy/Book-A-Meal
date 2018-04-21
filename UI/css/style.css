@@ -85,7 +85,7 @@ nav li .active {
     color:#000000;
 }
 #small_header{
-    background-image: url("images/1 (5).jpg");
+    background-image: url("../images/3.jpg");
     background-color: #ffffff; 
     background-size: cover;
     min-height: 150px;
@@ -135,6 +135,34 @@ nav li .active {
   width:100%;
 }
 /* End food section */
+
+/* Form DIV */
+#form-div{
+    background-size: cover;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    padding-bottom:30px;
+    padding-top:30px;
+}
+
+#form-div div{
+    flex: 80%;
+    max-width: 80%;
+    text-align: center;
+}
+
+#form-div input{
+    height: 30px;
+    width:100%;
+}
+
+#form-div .btn{
+    width:auto;
+}
+
+/* End Form Div */
 
 /* footer section */
 #footer{
@@ -221,6 +249,8 @@ nav li .active {
 .text-center{
     text-align: center;
 }
+
+/* Styling for .container */
 .container {
     width: 100%;
     padding-right: 15px;
@@ -252,6 +282,9 @@ nav li .active {
       max-width: 1140px;
     }
   }
+/* End Styling for .container */
+  
+
 /* Small devices (landscape phones, 576px and above) */
 @media (min-width: 576px) {
     #header{
