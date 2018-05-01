@@ -114,6 +114,17 @@ app.post('/orders', function (req, res) {
     res.status(201).send({ message: 'Order successfully Placed', orders });
 });
 
+// Modify an order
+app.put('/orders/:orderId', function (req, res) {
+    const orderId = req.params.orderId;
+    const order = orders.find(orderItem => +orderItem.orderId === +orderId);
+    if (!order) {
+        return res.status(404).json({ message: `Update failed because Order with Id ${orderId} does not exist`, orders });
+    }
+    Object.assign(order, req.body);
+    return res.json({ message: 'Order updated successfully!', orders });
+});
+
 app.get('*', (req, res) => res.status(404).send({
     message: 'welcome to nothingness . yes! notiness',
 }));
