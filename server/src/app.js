@@ -105,6 +105,15 @@ app.post('/menu', function (req, res) {
 // Get the menu for the day
 app.get('/menu', (req, res) => res.status(200).send(menu));
 
+// Select the meal option from the menu
+app.post('/orders', function (req, res) {
+    const orderId = orders.length === 0 ? 1 : orders.length + 1;
+    const newOrder = req.body;
+    newOrder.orderId = orderId;
+    orders.push(newOrder);
+    res.status(201).send({ message: 'Order successfully Placed', orders });
+});
+
 app.get('*', (req, res) => res.status(404).send({
     message: 'welcome to nothingness . yes! notiness',
 }));
