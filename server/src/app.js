@@ -102,6 +102,9 @@ app.post('/menu', function (req, res) {
     res.status(201).send({ message: 'Menu successfully added', menu });
 });
 
+// Get the menu for the day
+app.get('/menu', (req, res) => res.status(200).send(menu));
+
 app.get('*', (req, res) => res.status(404).send({
     message: 'welcome to nothingness . yes! notiness',
 }));
