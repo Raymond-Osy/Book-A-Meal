@@ -84,6 +84,17 @@ app.put('/meals/:mealId', function (req, res) {
     return res.json({ message: 'Meal Option updated successfully', meals });
 });
 
+// Remove a meal option
+app.delete('/meals/:mealId', function (req, res) {
+    const mealId = req.params.mealId;
+    const meal = meals.find(mealOption => +mealOption.mealId === +mealId);
+    if (!meal) {
+        return res.status(404).json({ message: `Meal Option with Id ${mealId} does not exist`, meals });
+    }
+    meals.splice(meals.indexOf(meal), 1);
+    return res.status(200).json({ message: `Meal Option  with Id ${mealId} was deleted successfully`, meals });
+});
+
 app.get('*', (req, res) => res.status(404).send({
     message: 'welcome to nothingness . yes! notiness',
 }));
