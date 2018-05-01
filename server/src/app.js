@@ -125,6 +125,9 @@ app.put('/orders/:orderId', function (req, res) {
     return res.json({ message: 'Order updated successfully!', orders });
 });
 
+// Get all the orders
+app.get('/orders', (req, res) => res.status(200).send(orders));
+
 app.get('*', (req, res) => res.status(404).send({
     message: 'welcome to nothingness . yes! notiness',
 }));
