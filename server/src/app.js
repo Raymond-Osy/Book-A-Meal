@@ -64,6 +64,15 @@ const orders =
 //Get all the meal options 
 app.get('/meals', (req, res) => res.status(200).send(meals));
 
+// Add a meal option
+app.post('/meals', function (req, res) {
+    const mealId = meals.length === 0 ? 1 : meals.length + 1;
+    const newMeal = req.body;
+    newMeal.mealId = mealId;
+    meals.push(newMeal);
+    res.status(201).send({ message: 'Meal successfully added', meals });
+});
+
 app.get('*', (req, res) => res.status(404).send({
     message: 'welcome to nothingness . yes! notiness',
 }));
