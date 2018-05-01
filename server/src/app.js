@@ -73,6 +73,17 @@ app.post('/meals', function (req, res) {
     res.status(201).send({ message: 'Meal successfully added', meals });
 });
 
+//Update the information of a meal option
+app.put('/meals/:mealId', function (req, res) {
+    const mealId = req.params.mealId;
+    const meal = meals.find(mealOption => +mealOption.mealId === +mealId);
+    if (!meal) {
+        return res.status(404).json({ message: `Update failed because Meal Option with Id ${mealId} does not exist`, orders });
+    }
+    Object.assign(meal, req.body);
+    return res.json({ message: 'Meal Option updated successfully', meals });
+});
+
 app.get('*', (req, res) => res.status(404).send({
     message: 'welcome to nothingness . yes! notiness',
 }));
