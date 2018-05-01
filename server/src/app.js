@@ -95,6 +95,13 @@ app.delete('/meals/:mealId', function (req, res) {
     return res.status(200).json({ message: `Meal Option  with Id ${mealId} was deleted successfully`, meals });
 });
 
+// Setup the menu for the day
+app.post('/menu', function (req, res) {
+    const newMenuItem = req.body;
+    menu.push(newMenuItem);
+    res.status(201).send({ message: 'Menu successfully added', menu });
+});
+
 app.get('*', (req, res) => res.status(404).send({
     message: 'welcome to nothingness . yes! notiness',
 }));
