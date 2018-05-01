@@ -61,6 +61,9 @@ const orders =
     }
 ]
 
+//Get all the meal options 
+app.get('/meals', (req, res) => res.status(200).send(meals));
+
 app.get('*', (req, res) => res.status(404).send({
     message: 'welcome to nothingness . yes! notiness',
 }));
